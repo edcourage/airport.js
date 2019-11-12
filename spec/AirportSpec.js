@@ -12,26 +12,14 @@ describe("Airport", function(){
 
     it("returns a plane thats landed", function() {
       expect(heathrow.land(plane)).toEqual(plane)
-
-
-
-
-
-
-
-
     })
+  })
 
+  describe("take off", function(){
 
-
-
-
-
-
-
-
-
-
+    it("returns a plane that has taken off", function() {
+      expect(heathrow.takeOff(plane)).toEqual(plane)
+    })
   })
 
 
