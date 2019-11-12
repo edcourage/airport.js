@@ -7,7 +7,7 @@ describe("Airport", function(){
     heathrow = new Airport()
     // plane = jasmine.createSpy("bigPlane")
     planeReal = new Plane()
-    plane = jasmine.createSpyObj("plane",['isFlying'])
+    plane = jasmine.createSpy()
 });
 
 
@@ -20,13 +20,10 @@ describe("Airport", function(){
     })
 
     it('returns true', function() {
-      var plane_2;
-      // spyOn(plane, 'plane').and.callFake(function(isFlying){return true})
-      spyOn(plane_2, 'isFlying').andReturn(true)
+      // var plane_2;
 
-      // spyOn(plane,'isFlying').and.returnValue(true);
-
-      expect(heathrow.spyTest(plane_2)).toEqual(true)
+      plane = jasmine.createSpyObj('plane',{'isFlying':true})
+      expect(heathrow.spyTest(plane)).toEqual(true)
 
 
     })
